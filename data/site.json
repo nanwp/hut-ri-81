@@ -1,0 +1,29 @@
+{
+  "event": {
+    "name": "Semarak Kemerdekaan",
+    "fullName": "Semarak Kemerdekaan RW 01",
+    "hutKe": 81,
+    "tahun": 2026,
+    "tagline": "Merdeka dalam kebersamaan, meriah dalam gotong royong.",
+    "rangeLabel": "16 Agustus – 6 September 2026",
+    "penyelenggara": "Karang Taruna RW 01"
+  },
+  "url": "",
+  "kontak": {
+    "sekretariat": "Balai Warga RW 01",
+    "whatsapp": "0881-5842-409",
+    "whatsappIntl": "628815842409",
+    "email": "generasimuda01.kt@gmail.com"
+  },
+  "sosmed": [
+    { "label": "Instagram", "handle": "@katar01_jatiluhur", "url": "https://instagram.com/katar01_jatiluhur" },
+    { "label": "TikTok", "handle": "@karangtaruna01_jatiluhur", "url": "https://tiktok.com/@karangtaruna01_jatiluhur" },
+    { "label": "YouTube", "handle": "Karang Taruna RW 01", "url": "" }
+  ],
+  "panitia": [
+    { "peran": "Ketua Pelaksana", "nama": "M Sofyan Addaruri (Dodot)" },
+    { "peran": "Wakil Ketua", "nama": "Aditya Sasono" },
+    { "peran": "Sekretaris", "nama": "Oci" },
+    { "peran": "Bendahara", "nama": "Reza Maulana" }
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "malam-tasyakuran",
+    "order": 1,
+    "title": "Malam Tasyakuran",
+    "level": "Tingkat RW",
+    "dateStart": "2026-08-16",
+    "dateEnd": null,
+    "dateLabel": "16 Agustus 2026",
+    "timeLabel": "Malam",
+    "category": "seremonial",
+    "description": "Rangkaian dibuka pada malam menjelang 17 Agustus dengan doa bersama — bentuk rasa syukur warga RW 01 kepada Tuhan Yang Maha Esa atas nikmat kemerdekaan Republik Indonesia.",
+    "highlight": false,
+    "sessions": null,
+    "lineup": null,
+    "headliner": null,
+    "formUrl": null
+  },
+  {
+    "id": "upacara-lomba-rt",
+    "order": 2,
+    "title": "Upacara Bendera & Perlombaan Tingkat RT",
+    "level": "RW & Tiap RT",
+    "dateStart": "2026-08-17",
+    "dateEnd": null,
+    "dateLabel": "17 Agustus 2026",
+    "timeLabel": "Pagi – Sore",
+    "category": "seremonial",
+    "description": "Pagi yang khidmat, siang yang riuh. Dana operasional dan hadiah didistribusikan langsung oleh Karang Taruna ke setiap RT agar warga merayakan di lingkungan terdekatnya.",
+    "highlight": false,
+    "sessions": [
+      { "waktu": "Pagi", "judul": "Upacara pengibaran bendera merah putih tingkat RW" },
+      { "waktu": "Siang", "judul": "Perlombaan seru di masing-masing RT" }
+    ],
+    "lineup": null,
+    "headliner": null,
+    "formUrl": null
+  },
+  {
+    "id": "sepak-bola-antar-rt",
+    "order": 3,
+    "title": "Lomba Sepak Bola Antar RT",
+    "level": "Tingkat RW",
+    "dateStart": "2026-08-22",
+    "dateEnd": "2026-08-23",
+    "dateLabel": "22–23 Agustus 2026",
+    "timeLabel": "Sabtu & Minggu",
+    "category": "lomba",
+    "description": "Ajang unjuk kekompakan dan sportivitas: tim perwakilan tiap RT bertanding memperebutkan gelar juara sekaligus mempererat tali persaudaraan antarwarga RW 01.",
+    "highlight": false,
+    "sessions": null,
+    "lineup": null,
+    "headliner": null,
+    "formUrl": "https://forms.gle/ganti-link-pendaftaran-sepakbola"
+  },
+  {
+    "id": "senam-pentas-seni-anak",
+    "order": 4,
+    "title": "Senam Serentak & Pentas Seni Anak",
+    "level": "Seluruh Warga",
+    "dateStart": "2026-09-05",
+    "dateEnd": null,
+    "dateLabel": "5 September 2026",
+    "timeLabel": "Pagi & Malam Minggu",
+    "category": "hiburan",
+    "description": "Sehat bareng di pagi hari, lalu malamnya panggung gembira menjadi ruang kreativitas yang didedikasikan untuk anak-anak RW 01.",
+    "highlight": false,
+    "sessions": [
+      { "waktu": "Pagi", "judul": "Senam serentak seluruh warga — budaya hidup sehat & bugar" },
+      { "waktu": "Malam Minggu", "judul": "Panggung gembira & pentas seni anak: unjuk bakat, tari-tarian, dan seni" }
+    ],
+    "lineup": null,
+    "headliner": null,
+    "formUrl": null
+  },
+  {
+    "id": "sepeda-hias-puncak-hiburan",
+    "order": 5,
+    "title": "Puncak Hiburan Warga",
+    "level": "Seluruh Warga",
+    "dateStart": "2026-09-06",
+    "dateEnd": null,
+    "dateLabel": "6 September 2026",
+    "timeLabel": "Pagi & Malam Senin",
+    "category": "hiburan",
+    "description": "Penutup rangkaian HUT RI ke-81: pagi pawai jalan sehat berkostum unik dan fun bike sepeda hias keliling lingkungan, malamnya hiburan rakyat bersama panggung dangdut Mardatila Group.",
+    "highlight": true,
+    "sessions": [
+      { "waktu": "Pagi", "judul": "Pawai jalan sehat kostum unik & fun bike sepeda hias" },
+      { "waktu": "Malam Senin", "judul": "Panggung musik dangdut Mardatila Group" }
+    ],
+    "lineup": [
+      "Pawai jalan sehat berkostum unik",
+      "Fun bike sepeda hias keliling lingkungan",
+      "Panggung dangdut Mardatila Group",
+      "Doorprize untuk warga",
+      "Pengumuman juara & penutupan rangkaian"
+    ],
+    "headliner": "Mardatila Group",
+    "formUrl": "https://forms.gle/ganti-link-pendaftaran-sepedahias"
+  }
+]

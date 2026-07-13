@@ -1,0 +1,50 @@
+{
+  "updatedAt": "2026-07-11",
+  "tiers": [
+    {
+      "id": "platinum",
+      "label": "Platinum",
+      "amount": 10000000,
+      "benefits": [
+        "Logo paling besar di backdrop panggung utama",
+        "Logo di seluruh spanduk & media publikasi",
+        "Penyebutan oleh MC di seluruh rangkaian acara",
+        "Posisi utama di website ini",
+        "Ucapan terima kasih khusus di malam puncak"
+      ]
+    },
+    {
+      "id": "gold",
+      "label": "Gold",
+      "amount": 7000000,
+      "benefits": [
+        "Logo besar di backdrop panggung utama",
+        "Logo di spanduk utama & media publikasi",
+        "Penyebutan oleh MC di malam puncak",
+        "Logo di website ini"
+      ]
+    },
+    {
+      "id": "silver",
+      "label": "Silver",
+      "amount": 3000000,
+      "benefits": [
+        "Logo di backdrop panggung",
+        "Logo di spanduk acara",
+        "Logo di website ini"
+      ]
+    },
+    {
+      "id": "bronze",
+      "label": "Bronze",
+      "amount": 1000000,
+      "benefits": [
+        "Logo di spanduk acara",
+        "Nama usaha di website ini"
+      ]
+    }
+  ],
+  "sponsors": [
+    { "name": "RK Net", "tier": "bronze", "logo": "https://rknet.id/logo.png", "url": "https://rknet.id" }
+  ]
+}

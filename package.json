@@ -1,0 +1,19 @@
+{
+  "name": "semarak-kemerdekaan-rw01",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
+    "nuxt": "^3.21.8"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "target": 107650000,
+  "updatedAt": "2026-07-11",
+  "channels": [
+    {
+      "type": "transfer",
+      "label": "Transfer Bank",
+      "detail": "Menyusul",
+      "holder": "Kas Karang Taruna RW 01"
+    },
+    {
+      "type": "qris",
+      "label": "QRIS",
+      "detail": "Menyusul",
+      "holder": null
+    }
+  ],
+  "expenses": [
+    { "label": "Print Proposal", "amount": 25000, "date": "2026-07-08" }
+  ],
+  "donors": [
+    { "name": "Nanda Wijaya Putra", "amount": 50000, "rt": null }
+  ]
+}
