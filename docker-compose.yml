@@ -5,5 +5,5 @@ services:
     container_name: semarak-rw01
     # reverse proxy di VPS mengarah ke port ini (hanya bind ke localhost)
     ports:
-      - '127.0.0.1:8081:80'
+      - '127.0.0.1:8881:80'
     restart: unless-stopped
