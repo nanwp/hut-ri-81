@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import sponsorsData from '~/data/sponsors.json'
 import site from '~/data/site.json'
-import type { TierSponsor } from '~/utils/model'
+import type { Sponsor, TierSponsor } from '~/utils/model'
 
 const tiers = sponsorsData.tiers as TierSponsor[]
+const sponsors = sponsorsData.sponsors as Sponsor[]
 
 function waTier(t: TierSponsor): string {
   const pesan = encodeURIComponent(
@@ -25,15 +26,30 @@ function waTier(t: TierSponsor): string {
     </header>
 
     <div class="kartu-grid">
-      <article v-for="t in tiers" :key="t.id" class="kartu-tier" :class="t.id">
+      <article
+        v-for="t in tiers"
+        :key="t.id"
+        class="kartu-tier"
+        :class="[t.id, { penuh: sisaSlot(t, sponsors) === 0 }]"
+      >
         <p class="t-label">{{ t.label }}</p>
         <p class="t-harga">{{ formatRupiah(t.amount) }}</p>
+        <p class="t-slot" :class="{ habis: sisaSlot(t, sponsors) === 0 }">
+          {{ sisaSlot(t, sponsors) === 0 ? 'Penuh' : `Sisa ${sisaSlot(t, sponsors)} slot` }}
+        </p>
         <ul class="t-benefit">
           <li v-for="b in t.benefits" :key="b">{{ b }}</li>
         </ul>
-        <a :href="waTier(t)" target="_blank" rel="noopener" class="t-cta">
+        <a
+          v-if="sisaSlot(t, sponsors) > 0"
+          :href="waTier(t)"
+          target="_blank"
+          rel="noopener"
+          class="t-cta"
+        >
           Tanya paket ini <span aria-hidden="true">→</span>
         </a>
+        <p v-else class="t-cta t-mati">Slot penuh</p>
       </article>
     </div>
   </section>
@@ -122,6 +138,45 @@ function waTier(t: TierSponsor): string {
   margin-top: 0.7rem;
   font: 400 1.8rem/1.1 var(--font-display);
   font-variant-numeric: tabular-nums;
+}
+
+.t-slot {
+  align-self: flex-start;
+  margin-top: 0.7rem;
+  font: 800 0.68rem/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--emas-teks);
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 0.32rem 0.7rem;
+}
+
+.platinum .t-slot {
+  color: var(--ungu);
+}
+
+.silver .t-slot {
+  color: var(--biru);
+}
+
+.bronze .t-slot {
+  color: var(--oranye);
+}
+
+.t-slot.habis {
+  color: var(--tinta-2);
+}
+
+.kartu-tier.penuh {
+  opacity: 0.62;
+  filter: saturate(0.35);
+}
+
+.t-mati {
+  color: var(--tinta-2);
+  border-bottom-color: var(--garis);
+  margin-top: 1.4rem;
 }
 
 .t-benefit {
