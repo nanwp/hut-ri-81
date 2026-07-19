@@ -43,6 +43,7 @@ export interface TierSponsor {
   id: string
   label: string
   amount: number
+  maxSlots: number
   benefits: string[]
 }
 
@@ -56,6 +57,11 @@ export interface Sponsor {
 export function totalSponsor(sponsors: Sponsor[], tiers: TierSponsor[]): number {
   const harga = new Map(tiers.map((t) => [t.id, t.amount]))
   return sponsors.reduce((jumlah, s) => jumlah + (harga.get(s.tier) ?? 0), 0)
+}
+
+export function sisaSlot(tier: TierSponsor, sponsors: Sponsor[]): number {
+  const terisi = sponsors.filter((s) => s.tier === tier.id).length
+  return Math.max(0, tier.maxSlots - terisi)
 }
 
 export interface Donatur {

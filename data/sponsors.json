@@ -5,6 +5,7 @@
       "id": "platinum",
       "label": "Platinum",
       "amount": 10000000,
+      "maxSlots": 2,
       "benefits": [
         "Logo paling besar di backdrop panggung utama",
         "Logo di seluruh spanduk & media publikasi",
@@ -17,6 +18,7 @@
       "id": "gold",
       "label": "Gold",
       "amount": 7000000,
+      "maxSlots": 4,
       "benefits": [
         "Logo besar di backdrop panggung utama",
         "Logo di spanduk utama & media publikasi",
@@ -28,6 +30,7 @@
       "id": "silver",
       "label": "Silver",
       "amount": 3000000,
+      "maxSlots": 6,
       "benefits": [
         "Logo di backdrop panggung",
         "Logo di spanduk acara",
@@ -38,6 +41,7 @@
       "id": "bronze",
       "label": "Bronze",
       "amount": 500000,
+      "maxSlots": 10,
       "benefits": [
         "Logo di spanduk acara",
         "Nama usaha di website ini"
