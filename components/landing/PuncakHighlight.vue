@@ -4,10 +4,19 @@ import type { Acara } from '~/utils/model'
 
 const puncak = (eventsData as Acara[]).find((e) => e.highlight)
 const malamSesi = puncak?.sessions?.at(-1)?.waktu ?? 'Malam'
+
+// dihitung setelah mounted agar render server & client sama (pola HeroCountdown)
+const sisaHari = ref<number | null>(null)
+
+onMounted(() => {
+  if (!puncak) return
+  const selisih = new Date(puncak.dateStart).getTime() - Date.now()
+  if (selisih > 0) sisaHari.value = Math.ceil(selisih / 86400000)
+})
 </script>
 
 <template>
-  <section v-if="puncak" class="puncak" aria-labelledby="judul-headliner">
+  <section v-if="puncak" id="panggung" class="puncak" aria-labelledby="judul-headliner">
     <FestiveTexture :opacity="0.07" class="tex" />
 
     <div class="wrap puncak-in">
@@ -15,6 +24,14 @@ const malamSesi = puncak?.sessions?.at(-1)?.waktu ?? 'Malam'
         <span class="dot" aria-hidden="true"></span>
         Live on stage · {{ puncak.dateLabel }} · {{ malamSesi }}
       </p>
+
+      <p v-if="sisaHari !== null" class="hitung-chip">
+        ✦ {{ sisaHari }} hari menuju malam panggung
+      </p>
+
+      <div class="marquee reveal" style="--rd: 0.05s" aria-hidden="true">
+        <span v-for="n in 9" :key="n" class="bohlam" :class="{ ganjil: n % 2 === 1 }"></span>
+      </div>
 
       <p class="eyebrow-p reveal" style="--rd: 0.08s">Puncak Hiburan Warga mempersembahkan</p>
 
@@ -50,6 +67,7 @@ const malamSesi = puncak?.sessions?.at(-1)?.waktu ?? 'Malam'
   padding-block: clamp(4.5rem, 10vw, 7.5rem);
   text-align: center;
   border-block: var(--tepi);
+  scroll-margin-top: 4rem;
 }
 
 .tex {
@@ -87,8 +105,64 @@ const malamSesi = puncak?.sessions?.at(-1)?.waktu ?? 'Malam'
   }
 }
 
+.hitung-chip {
+  width: fit-content;
+  margin: 1.1rem auto 0;
+  padding: 0.5rem 1.05rem;
+  border: 2px solid #ffd23f;
+  border-radius: 999px;
+  font: 800 0.7rem/1 var(--font-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffd23f;
+}
+
+.marquee {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.bohlam {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffd23f;
+  box-shadow: 0 0 10px 2px rgba(255, 210, 63, 0.75);
+  animation: nyala 1.2s steps(1) infinite;
+}
+
+.bohlam.ganjil {
+  animation-delay: 0.6s;
+}
+
+@keyframes nyala {
+  50% {
+    background: #7a6320;
+    box-shadow: none;
+  }
+}
+
+@keyframes pendar {
+  0%,
+  100% {
+    text-shadow: 0.05em 0.05em 0 #f03d8a;
+  }
+  50% {
+    text-shadow: 0.05em 0.05em 0 #f03d8a, 0 0 32px rgba(240, 61, 138, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bohlam,
+  .headliner {
+    animation: none;
+  }
+}
+
 .eyebrow-p {
-  margin-top: 2rem;
+  margin-top: 1.1rem;
   font: 800 0.74rem/1 var(--font-body);
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -101,6 +175,7 @@ const malamSesi = puncak?.sessions?.at(-1)?.waktu ?? 'Malam'
   color: #ffd23f;
   text-shadow: 0.05em 0.05em 0 #f03d8a;
   line-height: 0.92;
+  animation: pendar 3s ease-in-out infinite;
 }
 
 .genre {
