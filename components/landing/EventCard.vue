@@ -7,11 +7,13 @@ const nomor = computed(() => String(props.event.order).padStart(2, '0'))
 
 // tiap kartu dapat warna aksen sendiri, berputar mengikuti urutan acara
 const AKSEN = ['var(--merah)', 'var(--biru)', 'var(--hijau)', 'var(--oranye)', 'var(--ungu)', 'var(--pink)']
-const aksen = computed(() => AKSEN[(props.event.order - 1) % AKSEN.length])
+const aksen = computed(() =>
+  props.event.highlight ? 'var(--emas)' : AKSEN[(props.event.order - 1) % AKSEN.length]
+)
 </script>
 
 <template>
-  <article class="kartu" :style="{ '--aksen': aksen }">
+  <article class="kartu" :class="{ puncak: event.highlight }" :style="{ '--aksen': aksen }">
     <p class="no" aria-hidden="true">{{ nomor }}</p>
 
     <div class="isi">
@@ -23,6 +25,9 @@ const aksen = computed(() => AKSEN[(props.event.order - 1) % AKSEN.length])
         {{ event.title }}
         <span v-if="event.highlight" class="badge">Puncak ★</span>
       </h3>
+      <p v-if="event.highlight && event.headliner" class="bintang">
+        Bintang Tamu: <strong>{{ event.headliner }}</strong>
+      </p>
       <p class="desk">{{ event.description }}</p>
 
       <ul v-if="event.sessions" class="sesi">
@@ -63,6 +68,14 @@ const aksen = computed(() => AKSEN[(props.event.order - 1) % AKSEN.length])
 .kartu:hover {
   transform: translate(-2px, -2px);
   box-shadow: 7px 7px 0 var(--tinta);
+}
+
+.kartu.puncak {
+  border-top: 6px solid var(--emas);
+}
+
+.kartu.puncak .no {
+  color: #1e1611;
 }
 
 @media (min-width: 760px) {
@@ -132,6 +145,22 @@ const aksen = computed(() => AKSEN[(props.event.order - 1) % AKSEN.length])
   vertical-align: 0.35em;
   margin-left: 0.45rem;
   transform: rotate(2deg);
+}
+
+.bintang {
+  width: fit-content;
+  margin-top: 0.7rem;
+  background: color-mix(in srgb, var(--emas) 22%, transparent);
+  border: 2px solid var(--emas);
+  border-radius: 999px;
+  padding: 0.34rem 0.8rem;
+  font: 700 0.72rem/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bintang strong {
+  font-weight: 900;
 }
 
 .desk {
