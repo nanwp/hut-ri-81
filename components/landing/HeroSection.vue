@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import eventsData from '~/data/events.json'
 import site from '~/data/site.json'
+import type { Acara } from '~/utils/model'
+
+const puncak = (eventsData as Acara[]).find((e) => e.highlight)
+
+// "6 September 2026" → "6 Sep"
+const tanggalPendek = computed(() => {
+  const [tgl, bulan] = (puncak?.dateLabel ?? '').split(' ')
+  return `${tgl} ${(bulan ?? '').slice(0, 3)}`
+})
 
 const tickerItems = [
   `Dirgahayu Republik Indonesia ke-${site.event.hutKe}`,
@@ -21,6 +31,9 @@ const tickerItems = [
       <div class="pils lift l1">
         <span class="pil pil-merah">{{ site.event.rangeLabel }}</span>
         <span class="pil pil-biru">Karang Taruna · RW 01</span>
+        <a v-if="puncak?.headliner" href="#panggung" class="pil pil-emas">
+          ★ {{ puncak.headliner }} Live · {{ tanggalPendek }}
+        </a>
       </div>
 
       <h1 class="judul">
@@ -97,6 +110,20 @@ const tickerItems = [
 .pil-biru {
   background: var(--biru);
   color: #fff6e7;
+}
+
+/* teks tetap gelap di kedua tema — pola sama dengan teks stiker starburst */
+.pil-emas {
+  background: var(--emas);
+  color: #1e1611;
+  text-decoration: none;
+  animation: pil-kedip 2.2s ease-in-out infinite;
+}
+
+@keyframes pil-kedip {
+  50% {
+    box-shadow: var(--pop-kecil), 0 0 14px 2px rgba(255, 210, 63, 0.8);
+  }
 }
 
 .judul {
@@ -273,6 +300,10 @@ const tickerItems = [
 
   .stiker.lift {
     transform: rotate(-10deg);
+  }
+
+  .pil-emas {
+    animation: none;
   }
 }
 </style>
