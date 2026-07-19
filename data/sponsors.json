@@ -5,9 +5,9 @@
       "id": "platinum",
       "label": "Platinum",
       "amount": 10000000,
-      "maxSlots": 2,
+      "maxSlots": 3,
       "benefits": [
-        "Logo paling besar di backdrop panggung utama",
+        "Logo paling besar di panggung utama",
         "Logo di seluruh spanduk & media publikasi",
         "Penyebutan oleh MC di seluruh rangkaian acara",
         "Posisi utama di website ini",
@@ -18,10 +18,10 @@
       "id": "gold",
       "label": "Gold",
       "amount": 7000000,
-      "maxSlots": 4,
+      "maxSlots": 5,
       "benefits": [
-        "Logo besar di backdrop panggung utama",
-        "Logo di spanduk utama & media publikasi",
+        "Logo besar di panggung utama",
+        "Logo di seluruh spanduk & media publikasi",
         "Penyebutan oleh MC di malam puncak",
         "Logo di website ini"
       ]
@@ -30,9 +30,10 @@
       "id": "silver",
       "label": "Silver",
       "amount": 3000000,
-      "maxSlots": 6,
+      "maxSlots": 7,
       "benefits": [
-        "Logo di backdrop panggung",
+        "Logo sedang di panggung utama",
+        "Logo di seluruh spanduk & media publikasi",
         "Logo di spanduk acara",
         "Logo di website ini"
       ]
@@ -40,10 +41,11 @@
     {
       "id": "bronze",
       "label": "Bronze",
-      "amount": 500000,
+      "amount": 1000000,
       "maxSlots": 10,
       "benefits": [
-        "Logo di spanduk acara",
+        "Logo di panggung utama",
+        "Logo di seluruh spanduk & media publikasi",
         "Nama usaha di website ini"
       ]
     }
