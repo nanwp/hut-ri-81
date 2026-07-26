@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import donations from '~/data/donations.json'
 import sponsorsData from '~/data/sponsors.json'
-import type { Sponsor, TierSponsor } from '~/utils/model'
+import type { Donatur, Sponsor, TierSponsor } from '~/utils/model'
 
+// total dana mencakup donasi kolektif, bukan cuma yang masuk leaderboard
 const total =
-  totalDonasi(donations.donors) +
+  totalDonasi(donations.donors as Donatur[]) +
   totalSponsor(sponsorsData.sponsors as Sponsor[], sponsorsData.tiers as TierSponsor[])
 const persen = Math.min(100, Math.round((total / donations.target) * 100))
 </script>

@@ -1,5 +1,5 @@
 {
-  "target": 107650000,
+  "target": 124450000,
   "updatedAt": "2026-07-11",
   "channels": [
     {
@@ -16,9 +16,67 @@
     }
   ],
   "expenses": [
-    { "label": "Print Proposal", "amount": 25000, "date": "2026-07-08" }
+    { "label": "Konsumsi Rapat", "amount": 60000, "date": "2026-07-10" },
+    { "label": "Print Dokument", "amount": 50000, "date": "2026-07-14" },
+    { "label": "Konsumsi Rapat", "amount": 60000, "date": "2026-07-18" },
+    { "label": "Print Proposal", "amount": 540000, "date": "2026-07-20" },
+    { "label": "Konsumsi Rapat", "amount": 60000, "date": "2026-07-21" },
+    { "label": "Operasional 04", "amount": 300000, "date": "2026-07-24" },
+    { "label": "Operasional 02", "amount": 120000, "date": "2026-07-26" }
   ],
   "donors": [
-    { "name": "Nanda Wijaya Putra", "amount": 50000, "rt": null }
+    { "name": "Pak Sapto Sugiharto", "amount": 500000, "rt": "04" },
+    { "name": "Pak Joko Waryono", "amount": 1000000, "rt": "02" },
+    { "name": "Hamba Allah", "amount": 300000, "rt": "04" },
+    { "name": "Pak Haji Amri", "amount": 300000, "rt": "04" },
+    { "name": "Pak Husein Yusuf", "amount": 500000, "rt": "04" },
+    {
+      "name": "Iuran Warga RT 01",
+      "amount": 0,
+      "rt": "01",
+      "collective": true,
+      "contributors": 0,
+      "note": "Akumulasi sumbangan warga dari RT 01"
+    },
+    {
+      "name": "Iuran Warga RT 02",
+      "amount": 1451000,
+      "rt": "02",
+      "collective": true,
+      "contributors": 34,
+      "note": "Akumulasi sumbangan warga dari RT 02"
+    },
+    {
+      "name": "Iuran Warga RT 03",
+      "amount": 0,
+      "rt": "03",
+      "collective": true,
+      "contributors": 0,
+      "note": "Akumulasi sumbangan warga dari RT 03"
+    },
+    {
+      "name": "Iuran Warga RT 04",
+      "amount": 2081000,
+      "rt": "04",
+      "collective": true,
+      "contributors": 38,
+      "note": "Akumulasi sumbangan warga dari RT 04"
+    },
+    {
+      "name": "Iuran Warga RT 05",
+      "amount": 0,
+      "rt": "05",
+      "collective": true,
+      "contributors": 0,
+      "note": "Akumulasi sumbangan warga dari RT 05"
+    },
+    {
+      "name": "Iuran Warga RT 06",
+      "amount": 0,
+      "rt": "06",
+      "collective": true,
+      "contributors": 0,
+      "note": "Akumulasi sumbangan warga dari RT 06"
+    }
   ]
 }

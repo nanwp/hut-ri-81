@@ -68,6 +68,16 @@ export interface Donatur {
   name: string
   amount: number
   rt: string | null
+  /**
+   * true = donasi terkumpul (akumulasi banyak warga jadi satu catatan).
+   * Tetap dihitung ke total dana, tapi tidak ikut peringkat karena
+   * bukan sumbangan satu orang.
+   */
+  collective?: boolean
+  /** jumlah warga yang menyumbang pada entri kolektif */
+  contributors?: number | null
+  /** keterangan singkat, mis. "Kotak amal keliling RT 03" */
+  note?: string | null
 }
 
 export const KATEGORI_LABEL: Record<string, string> = {
@@ -79,4 +89,19 @@ export const KATEGORI_LABEL: Record<string, string> = {
 
 export function totalDonasi(donors: Donatur[]): number {
   return donors.reduce((jumlah, d) => jumlah + d.amount, 0)
+}
+
+/** donatur perorangan, urut dari nominal terbesar — ini yang masuk leaderboard */
+export function peringkatDonatur(donors: Donatur[]): Donatur[] {
+  return donors.filter((d) => !d.collective).sort((a, b) => b.amount - a.amount)
+}
+
+/** catatan donasi terkumpul, di luar leaderboard tapi tetap masuk total */
+export function donasiKolektif(donors: Donatur[]): Donatur[] {
+  return donors.filter((d) => d.collective)
+}
+
+/** total warga yang tercakup pada entri kolektif (0 kalau tidak didata) */
+export function totalPenyumbangKolektif(donors: Donatur[]): number {
+  return donasiKolektif(donors).reduce((jumlah, d) => jumlah + (d.contributors ?? 0), 0)
 }

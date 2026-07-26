@@ -51,6 +51,7 @@
     }
   ],
   "sponsors": [
-    { "name": "RK Net", "tier": "bronze", "logo": "https://rknet.id/logo.png", "url": "https://rknet.id" }
+    { "name": "RK Net", "tier": "bronze", "logo": "https://rknet.id/logo.png", "url": "https://rknet.id" },
+    { "name": "Cova Social Space", "tier": "bronze", "logo": null, "url": "https://www.instagram.com/cova.socialspace/" }
   ]
 }

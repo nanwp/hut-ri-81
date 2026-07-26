@@ -9,14 +9,16 @@ useSeoMeta({
     'Leaderboard donatur dan transparansi dana rangkaian acara HUT RI ke-81 RW 01. Dikelola oleh Karang Taruna RW 01.'
 })
 
-const peringkat: Donatur[] = [...(donations.donors as Donatur[])].sort(
-  (a, b) => b.amount - a.amount
-)
+const semuaDonatur = donations.donors as Donatur[]
+
+// leaderboard hanya donatur perorangan; entri kolektif ditampilkan terpisah
+const peringkat = peringkatDonatur(semuaDonatur)
 const tigaBesar = peringkat.slice(0, 3)
 const sisanya = peringkat.slice(3)
+const kolektif = donasiKolektif(semuaDonatur)
 
 // dana acara = donasi warga + paket sponsor (kas satu pintu, rincian tetap jelas)
-const totalWarga = totalDonasi(peringkat)
+const totalWarga = totalDonasi(semuaDonatur)
 const totalSpn = totalSponsor(
   sponsorsData.sponsors as Sponsor[],
   sponsorsData.tiers as TierSponsor[]
@@ -61,6 +63,17 @@ useReveal(halaman)
           <h2 id="judul-daftar">Daftar Donatur</h2>
         </header>
         <DonationTable class="reveal" style="--rd: 0.1s" :donors="sisanya" :offset="4" />
+      </section>
+
+      <section v-if="kolektif.length" class="blok" aria-labelledby="judul-kolektif">
+        <header class="blok-kepala reveal">
+          <p class="eyebrow">Di Luar Peringkat</p>
+          <h2 id="judul-kolektif">Hasil Keliling Sementara</h2>
+          <p class="ket">
+            Sumbangan yang ditarik kolektif per RT
+          </p>
+        </header>
+        <CollectiveDonation class="reveal" style="--rd: 0.1s" :entries="kolektif" />
       </section>
 
       <ExpenseRecap
@@ -108,6 +121,13 @@ useReveal(halaman)
 
 .blok-kepala h2 {
   margin-top: 0.6rem;
+}
+
+.blok-kepala .ket {
+  margin-top: 0.9rem;
+  max-width: 34rem;
+  color: var(--tinta-2);
+  font-size: 0.92rem;
 }
 
 .blok > :last-child:not(header) {
