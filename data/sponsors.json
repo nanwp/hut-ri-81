@@ -52,6 +52,7 @@
   ],
   "sponsors": [
     { "name": "RK Net", "tier": "bronze", "logo": "https://rknet.id/logo.png", "url": "https://rknet.id" },
-    { "name": "Cova Social Space", "tier": "bronze", "logo": null, "url": "https://www.instagram.com/cova.socialspace/" }
+    { "name": "Cova Social Space", "tier": "bronze", "logo": "https://karangtaruna.s3.ap-southeast-3.amazonaws.com/17an/LOGO+COVA-01.png", "url": "https://www.instagram.com/cova.socialspace/" },
+    { "name": "PT. CRIPTON MAJU GEMILANG", "tier": "bronze", "logo": "https://karangtaruna.s3.ap-southeast-3.amazonaws.com/17an/crptonlogo.png", "url": "https://cripton.co.id/" }
   ]
 }

@@ -27,6 +27,12 @@
   "donors": [
     { "name": "Pak Sapto Sugiharto", "amount": 500000, "rt": "04" },
     { "name": "Pak Joko Waryono", "amount": 1000000, "rt": "02" },
+    { "name": "Pak Joko Tri", "amount": 350000, "rt": "04" },
+    { "name": "AC Daikin", "amount": 400000, "rt": "16" },
+
+    { "name": "PT AWAL BERKAH BERSAMA", "amount": 500000, "rt": "04" },
+    { "name": "M Rifki Subakti", "amount": 500000, "rt": "05" },
+
     { "name": "Hamba Allah", "amount": 300000, "rt": "04" },
     { "name": "Pak Haji Amri", "amount": 300000, "rt": "04" },
     { "name": "Pak Husein Yusuf", "amount": 500000, "rt": "04" },
