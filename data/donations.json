@@ -37,6 +37,8 @@
     { "name": "Pak Haji Amri", "amount": 300000, "rt": "04" },
     { "name": "Pak Husein Yusuf", "amount": 500000, "rt": "04" },
     { "name": "Pak Ardana Himawan", "amount": 500000, "rt": null },
+    { "name": "ii marlina", "amount": 500000, "rt": null },
+
     {
       "name": "Iuran Warga RT 01",
       "amount": 0,
@@ -47,7 +49,7 @@
     },
     {
       "name": "Iuran Warga RT 02",
-      "amount": 1451000,
+      "amount": 5959000,
       "rt": "02",
       "collective": true,
       "contributors": 34,
@@ -55,7 +57,7 @@
     },
     {
       "name": "Iuran Warga RT 03",
-      "amount": 0,
+      "amount": 600000,
       "rt": "03",
       "collective": true,
       "contributors": 0,
@@ -63,7 +65,7 @@
     },
     {
       "name": "Iuran Warga RT 04",
-      "amount": 2081000,
+      "amount": 5124000,
       "rt": "04",
       "collective": true,
       "contributors": 38,
